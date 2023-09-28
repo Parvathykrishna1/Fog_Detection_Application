@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static}
+{% block content %}
+<div class="container-fluid" style="text-align:center;margin-top:5%;">
+    <h2 style="color:blue;font-weight:bold;">FOG DECTECTION</h2>
+    <br>
+    <div class="border:1px solid white;bg-primary;">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name='video_file'>
+        <input class="btn btn-danger" type="submit" value="Upload and Detect Fog">
+    </form></div></div>
+{% endblock %}

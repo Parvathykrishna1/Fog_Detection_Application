@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static}
+{% block content %}
+<h2 style="color:red"><i>Sign Up</i></h2>
+<form method="POST" action="{% url 'fogdetection_app:register' %}" class="p-2 " enctype="multipart/form-data">
+    {% csrf_token %}
+  <div class="mb-3">
+    <label class="form-label">Username</label>
+    <input type="text" class="form-control" name="u" placeholder="Enter Username">
+  </div>
+    <div class="mb-3">
+    <label class="form-label">Email</label>
+    <input type="email" class="form-control" name="e" placeholder="Enter Email">
+  </div>
+    <div class="mb-3">
+    <label class="form-label">password</label>
+    <input type="password" class="form-control" name="p" placeholder="Enter password">
+  </div>
+   <div class="mb-3">
+    <label class="form-label">confirm password</label>
+    <input type="password" class="form-control" name="cp" placeholder="Enter password again">
+ </div>
+    <div class="mb-3">
+    <input type="submit" class="btn btn-primary">
+
+    </div></form>
+{% if messages %}
+{% for i in messages %}
+<ul class="messages">
+    <li>{{i}}</li>
+</ul>
+{% endfor %}
+{% endif %}
+{% endblock %}
